@@ -1,2 +1,2 @@
 # lake-side-hotel
-Project : LekeSide Hotel 
+Project : LekeSide Hotel (Spring boot vs ReactJS)
