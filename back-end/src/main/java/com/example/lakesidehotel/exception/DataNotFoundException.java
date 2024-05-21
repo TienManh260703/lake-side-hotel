@@ -1,2 +1,8 @@
-package com.example.lakesidehotel.exception;public class DataNotFoundException {
+package com.example.lakesidehotel.exception;
+
+public class DataNotFoundException extends Exception {
+
+    public DataNotFoundException(String message) {
+        super(message);
+    }
 }

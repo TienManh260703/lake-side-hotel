@@ -30,12 +30,13 @@ public class Room {
     Boolean isBooked = false;
     @Lob
     Blob photo;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     List<BookedRoom> bookings;
     @Column(name = "created_at")
     LocalDateTime createdAt;
     @Column(name = "updated_at")
     LocalDateTime updatedAt;
+    Boolean deleted = false;
 
     public Room() {
         this.bookings = new ArrayList<>();
@@ -51,6 +52,7 @@ public class Room {
         String bookingCode = RandomStringUtils.randomNumeric(10);
         booking.setBookingConfirmationCode(bookingCode);
     }
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
